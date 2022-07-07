@@ -30,13 +30,14 @@ class First extends Component {
     }
 
     render(){
-        const { firstName } = this.props;
+        const { firstName, lastName, number } = this.props;
         return(
             <div style={this.state.light ? lightMode : darkMode}>
                 <h2>This is component 1</h2>
                 <h3>This is the next part of the component</h3>
-                <h3>The passed in name was: { firstName }</h3>
-                <button style={buttonStyle} onClick={ () => {this.setState({light: !this.state.light})}}>{ this.state.light ? "On" : "Off" }</button>
+                <h3>The passed in name was: { firstName } { lastName }</h3>
+                <h3>Your number: {number}</h3>
+                <button style={buttonStyle} onClick={ () => this.setState({light: !this.state.light})}>{ this.state.light ? "On" : "Off" }</button>
             </div>
         );
     }
